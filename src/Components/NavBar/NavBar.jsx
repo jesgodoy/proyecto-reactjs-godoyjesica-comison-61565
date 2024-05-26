@@ -1,3 +1,4 @@
+import './NavBar.css'
 import Brand from '../Brand/Brand.jsx'
 import CartWidget  from '../Cartwidget/CartWidget.jsx'
 

@@ -1,0 +1,47 @@
+header {
+    background-color: #0a203f;
+    color: rgb(79, 245, 245);
+  }
+  
+  header .text{
+    color: rgb(79, 245, 245);
+  }
+  
+  .animated-border {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px; 
+    text-decoration: none;
+    color: transparent; 
+    border: 2px solid transparent;
+    border-radius: 10px; 
+    overflow: hidden;
+  }
+  
+  .animated-border::before,
+  .animated-border::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px; 
+    bottom: 0;
+    transition: width 0.3s;
+  }
+  
+  .animated-border::before {
+    left: 0;
+    background-color: red; 
+  }
+  
+  .animated-border::after {
+    right: 0;
+    background-color: blue; 
+  }
+  
+  .animated-border:hover::before,
+  .animated-border:hover::after {
+    width: 100%;
+  }
+  
+  
+  

@@ -1,4 +1,6 @@
+import './CartWidget.css'
 import cart from './assets/cart-icon.png'
+
 
 const CartWidget  = () =>{
     return (
