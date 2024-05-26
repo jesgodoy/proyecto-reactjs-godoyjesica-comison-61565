@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+header {
+  background-color: #0a203f;
+  color: rgb(79, 245, 245);
+}
+
+
+header  .icono-menu{
+  background-color: rgb(79, 245, 245);
+
+}
+header .text{
+  color: rgb(79, 245, 245);
+}
+
+.animated-border {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px; /* Ajusta el relleno según tus necesidades */
+  text-decoration: none; /* Quita la decoración del enlace */
+  color: transparent; /* Hace que el texto sea transparente */
+
+  /* Borde redondeado */
+  border: 2px solid transparent;
+  border-radius: 10px; /* Ajusta el radio según tus necesidades */
+
+  /* Animación */
+  overflow: hidden;
+}
+
+.animated-border::before,
+.animated-border::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 5px; /* Grosor del borde, ajusta según tus necesidades */
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+.animated-border::before {
+  left: 0;
+  background-color: red; /* Primer color del borde */
+}
+
+.animated-border::after {
+  right: 0;
+  background-color: blue; /* Segundo color del borde */
+}
+
+.animated-border:hover::before,
+.animated-border:hover::after {
+  width: 100%;
+}
+
+header .container-cart .number-cart{
+  top: 10px;
+  left: 85%;
+  color:black;
+  background-color: aqua;
+}
+
+.greeting {
+  color: black;
+}
+
+@media screen and (min-width:576px){
+  header .container-cart .number-cart{
+      left: 65%;
+  }
+  
+}
+@media screen and (min-width:768px){
+  header .container-cart .number-cart{
+      left: 45%;
+  }
+  
+}
+@media screen and (min-width:992px){
+  header .container-cart .number-cart{
+      left: 50%;
+  }
+  
+}
+
+@media screen and (min-width:1200px){
+  header .container-cart .number-cart{
+      left: 40%;
+  }
+  
+}
+@media screen and (min-width:1400px){
+  header .container-cart .number-cart{
+      left: 35%;
+  }
+  
+}
+
