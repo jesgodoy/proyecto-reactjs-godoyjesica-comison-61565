@@ -4,10 +4,13 @@ import cart from './assets/cart-icon.png'
 
 const CartWidget  = () =>{
     return (
-        <div>
-            <img src= {cart} alt="carrito de compras" />
-            <span className='position-absolute rounded-circle p-1  number-cart'>0</span>
+        <div class="conntainer mt-2">
+            <button type="button" class="btn btn-cart position-relative">
+            <i class="bi bi-cart4"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-number">1</span>
+        </button>
         </div>
+        
     )
         
 }

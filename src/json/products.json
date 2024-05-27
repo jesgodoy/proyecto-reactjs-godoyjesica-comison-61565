@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "name": "PlayStation 5", 
+        "price": 1500000,
+        "img": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+       
+        "category": "consola",
+        "details": "Puedes descargar juegos digitales de PS5 y PS4 desde PlayStation® Store Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptables y audio 3D*, además de una generación completamente nueva de juegos de PlayStation. Muévete por los mundos del juego con un realismo increíble. Una velocidad de fotogramas alta y fluida de hasta 120 fps para los juegos compatibles, con soporte para salida de 120 Hz en pantallas 4K, disfruta de gráficos 4K nítidos. PS5. Almacenamiento 825GB SSD. La consola PS5 hace posibles nuevas formas de juego que jamas habias imaginado. Velocidad sorprendente: Disfruta de la potencia de una CPU, una GPU y una SSD personalizadas con E/S integradas que redefiniran lo que una consola PlayStation puede hacer. Juegos asombrosos: Maravillate con asombrosos graficos y descubre las nuevas funciones de PS5. Inmersion impresionante: Descubre una experiencia de juego mas inmersiva con soporte para respuesta haptica, gatillos adaptables y tecnologia de audio en 3D. Hasta 120 fps con salida de 120 Hz. Salida de 8K. Tempest 3D AudioTech. Gatillos adaptativos. La caja contiene: Control Inalambrico DualSense - Base - Cable HDMI - Cable AC- Cable USB - Manuales.",
+        "stock": 15
+    },
+    {
+        "id": 2,
+        "name": "Joystick Ps4", 
+        "price": 25000,
+        "img": "https://images.unsplash.com/flagged/photo-1580234820596-0876d136e6d5?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "category": "accesorios",
+        "details": "Descubre una experiencia de juego más profunda y envolvente que hace que la acción cobre vida en las palmas de tus manos. El control inalámbrico DualSense Midnight Black ofrece retroalimentación háptica inmersiva, gatillos adaptativos dinámicos y un micrófono incorporado, todo integrado en un diseño icónico y cómodo.",
+        "stock": 20
+    },
+    {
+        "id": 3,
+        "name": "Juego ciudad de los Dragones",      
+        "price": 15000,
+        "img": "https://img.freepik.com/foto-gratis/representacion-futurista-criatura-dragon_23-2151201670.jpg?t=st=1716847750~exp=1716851350~hmac=e46e772af483a27e67843f3ac2880b54af2c5e7e00e4bf580a6419657b518209&w=996",
+        "category": "juegos",
+        "details":  "",
+        "stock": 10
+    },
+    {
+        "id": 4,
+        "name": "Juego Fortnite",      
+        "price": 23000,
+        "img": "https://www.lanacion.com.ar/resizer/v2/epic-games-el-creador-de-fortnite-debera-pagar-2Q3PLEEKVFEYFHF3NQRXA56BXA?auth=0964f11b6803e0b414adb6616f73403f72cbbd03df3ccf9ea7bda5750daceb7f&width=880&height=586&quality=70&smart=true",
+        "category": "juegos",
+        "details":  "Star Wars Outlaws es un juego de acción y aventura en mundo abierto para consolas PlayStation 5, Xbox Series y PC desarrollado por Ubisoft.",
+        "stock": 5
+    },
+    {
+        "id": 5,
+        "name": "Mini Consola Portatil",      
+        "price": 52000,
+        "img": "https://images.pexels.com/photos/1367036/pexels-photo-1367036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   
+        "category": "consola",
+        "details": "lleva tu juegos a donde vaya, con esta consola podes distritar de una cantidad de 50000 juegos precargados ",
+        "stock": 15
+    },
+    {
+        "id": 6,
+        "name": "Controlador y gafas vr.",      
+        "price": 290000,
+        "img": "https://image.freepik.com/free-photo/high-angle-controller-vr-glasses_23-2149829130.jpg?t=st=1715199573~exp=1715203173~hmac=53cce566fd4bcd8daa81e896441c5f19d2b5cc89bb15cfc9b304c764d0bb30a1&w=1060",
+        "category": "accesorios",
+        "details": "Controlador de ángulo alto y gafas vr. para vivir tus juegos en 3 dimencion ",
+        "stock": 15
+    },
+    {
+        "id": 7,
+        "name":"mando Xbox",
+        "price": 45000,
+        "img": "https://images.pexels.com/photos/1298601/pexels-photo-1298601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "category":"accesorios",
+        "details": "mando para consolas Xbox",
+        "stock": 10
+    },
+    {
+        "id": 8,
+        "name": "Consola X-Box",
+        "price": 1200000,
+        "img": "https://images.unsplash.com/photo-1700153498368-3f61e094063e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "category": "consola",
+        "details": "procesador central basado en el procesador Intel Pentium III. El sistema también incorpora un lector de DVD, un disco duro interno, puerto ethernet y por último el sistema dispone de cuatro conectores para los mandos.",
+        "stock": 7
+    },
+    {
+        "id": 9,
+        "name": "Pokemon",
+        "price": 12000,
+        "img": "https://cdn.pixabay.com/photo/2020/06/29/19/19/toys-5353951_1280.jpg",
+        "category": "juegos",
+        "details": "juegos pokemon para ps4 ",
+        "stock": 15
+    }
+]

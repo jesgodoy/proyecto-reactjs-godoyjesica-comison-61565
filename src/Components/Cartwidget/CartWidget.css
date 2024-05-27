@@ -1,37 +1,7 @@
-header .container-cart .number-cart{
-    top: 10px;
-    left: 85%;
-    color:black;
-    background-color: aqua;
-  }
-@media screen and (min-width:576px){
-    header .container-cart .number-cart{
-        left: 65%;
-    }
-    
-  }
-  @media screen and (min-width:768px){
-    header .container-cart .number-cart{
-        left: 45%;
-    }
-    
-  }
-  @media screen and (min-width:992px){
-    header .container-cart .number-cart{
-        left: 50%;
-    }
-    
-  }
-  
-  @media screen and (min-width:1200px){
-    header .container-cart .number-cart{
-        left: 40%;
-    }
-    
-  }
-  @media screen and (min-width:1400px){
-    header .container-cart .number-cart{
-        left: 35%;
-    }
-    
-  }
+.btn-cart{
+  background-color: aqua;
+
+}
+.bg-number{
+  background-color: rgb(207, 29, 135);
+}
