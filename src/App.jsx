@@ -4,14 +4,15 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './style.css'
 import NavBar from './Components/NavBar/NavBar.jsx'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx';
-import ItemCount from './Components/ItemCount/ItemCount.jsx';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.jsx';
+
 
 function App() {
   return (
     <div>
       <NavBar />
       <ItemListContainer greeting={'Bienvenidos a Gamer Squad'} />
-      <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad del producto", quantity)}/>
+      <ItemDetailContainer/>
     </div>
     
   )
