@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import brand from './assets/logo.png'
 
 const Brand = () => {
     return (
-        <a href="#"><img src={brand} alt="Tienda Gamer Squad" /></a>
+        <Link to="/" ><img src={brand} alt="Tienda Gamer Squad" /></Link>
         
     )
 }

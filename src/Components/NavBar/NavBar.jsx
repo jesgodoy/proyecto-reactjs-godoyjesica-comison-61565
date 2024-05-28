@@ -1,6 +1,7 @@
 import './NavBar.css'
 import Brand from '../Brand/Brand.jsx'
 import CartWidget  from '../Cartwidget/CartWidget.jsx'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -20,24 +21,26 @@ const NavBar = () => {
                                     <div className="collapse navbar-collapse w-50 d-lg-flex justify-content-lg-center" id="navbarTogglerDemo03">
                                         <ul className="navbar-nav  ">
                                             <li className="nav-item mx-2">
-                                            <a className=" f-5 animated-border text"  href="#">Inicio</a>
+                                            <Link to='/' className=" f-5 animated-border text" >Inicio</Link>
                                             </li>
                                             <li className="nav-item mx-2">
-                                            <a className="f-5 animated-border text" href="#">Consolas</a>
+                                                <div className=" f-5 animated-border text">
+                                                    <NavLink to={"/category/consola"} className={({ isActive})=> isActive ? 'ActiveOption': 'Option'} style={{ textDecoration: 'none', color: 'rgb(79, 245, 245)'}} >Consolas</NavLink>
+                                                </div>
                                             </li>
                                             <li className="nav-item mx-2">
-                                            <a className="f-5 animated-border text "  href="#">Juegos</a>
+                                                <div className=" f-5 animated-border text">
+                                                    <NavLink to={"/category/accesorios"} className={({ isActive})=> isActive ? 'ActiveOption': 'Option'} style={{ textDecoration: 'none', color: 'rgb(79, 245, 245)'}}>Accesorios</NavLink>
+                                                </div>
                                             </li>
                                             <li className="nav-item mx-2">
-                                            <a className="animated-border text "  href="#">Coleccionables</a>
-                                            </li>
-                                            <li className="nav-item mx-2">
-                                            <a className="f-5 animated-border text" href="#">Contacto</a>
+                                                <div className=" f-5 animated-border text">
+                                                    <NavLink to={"/category/juegos"} className={({ isActive})=> isActive ? 'ActiveOption': 'Option'} style={{ textDecoration: 'none', color: 'rgb(79, 245, 245)'}}>Juegos</NavLink>
+                                                </div>
                                             </li>
                                         </ul>                         
                                     </div>
                             </div>
-
                         </nav>
                     </div>
                     <div className="col-3 col-lg-2 pt-3 container position-relative container-cart">

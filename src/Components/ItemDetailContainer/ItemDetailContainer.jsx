@@ -1,36 +1,48 @@
-import { useState, useEffect } from "react";
-import ItemDetail from '../ItemDetail/ItemDetail.jsx';
-import products from '../../json/products.json';
-import { useParams } from "react-router-dom";
+import { useState, useEffect, } from 'react'
+import Loading from '../Loading/Loading.jsx'
+import ItemDetail from '../ItemDetail/ItemDetail.jsx'
+import productsJSON from '../../json/products.json'
+import { useParams } from 'react-router-dom'
 
-
-const getProductById =(productId)=>{
+/*const getProductById =(productId)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve (products.find(product =>product.id === productId))
+            resolve (productsJSON.find(prod =>prod.id === productId))
         }, 500)
     })
-}
+}*/
+const getProducts = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(productsJSON);
+        }, 2000);
+    });
+};
 
 const ItemDetailContainer =()=>{
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState({})
+    const [loading, setLoading] = useState(true);
+    const {id} = useParams ()
 
     useEffect(() => {
-        getProductById(1)
-            .then(response => {
-                setProduct(response)
-            })
-            .catch(error=>{
-                console.error(error)
-            })
-    },[])
+        const fetchData = async () =>{
+            const data = await getProducts();
+            setProduct (id ? data.find(product => product.id == id): {})
+            setLoading (false)
+        };
+        fetchData()
+        
+    }, [id])
     
     return(
-        <div className=' m-5 '>
-            <ItemDetail {...product}/>
+        <div className='container my-5 border border-primary'>
+    
+            {
+                loading ? <Loading /> : <ItemDetail product={product} />
+            }
+        
         </div>
         
     )
 }
 export default ItemDetailContainer
-
