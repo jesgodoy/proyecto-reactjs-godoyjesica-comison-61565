@@ -1,25 +1,33 @@
 import {useState} from 'react'
 
 
-const ItemCount =({stock, initial, onAdd})=>{
-    const [quantity, setQuantity]  = useState (initial)
+const ItemCount =({stock})=>{
+    const [quantity, setQuantity]  = useState (1)
+    const [productStock, setProductStock] = useState(stock)
+  
     
     
-    const handleAdd = () => quantity < stock ? setQuantity(quantity+1): null
+    const handleAdd = () => quantity < productStock ? setQuantity(quantity + 1): null
     
     const handleSubstract = ()=>quantity > 1 ? setQuantity(quantity - 1) : null;
 
+    const onAdd = () =>{
+      if (quantity <= productStock) {
+        setProductStock(productStock - quantity)
+        setQuantity(1)
+        console.log("Agregaste " + quantity + " productos al Carrito!")
+      } 
+    }
+
     return(
-        <div className='container'>
-            <div className='d-flex justify-content-center text-center'>
-                <button type="button" className="btn btn-secondary" onClick={handleSubstract}>-</button>
-                <h4 className='p-1 mx-2'>{quantity}</h4>
-                <button type="button" className="btn btn-secondary"  onClick={handleAdd}>+</button>
+        <div className='container my-4'>
+            <div className='d-flex justify-content-center text-center my-4'>
+                <button type="button" className="btn btn-info fs-3" onClick={handleSubstract}>-</button>
+                <h4 className='p-1 mx-3 pt-3 fs-3'>{quantity}</h4>
+                <button type="button" className="btn btn-info fs-3"  onClick={handleAdd}>+</button>
             </div>
             <div>
-                <button className='rounded mt-3 p-3 button-count' onClick={()=>  onAdd(quantity)} disabled={!stock}>
-                    {stock ? 'agregar al carrito' : 'No hay stock disponible'}
-                </button>
+              {productStock > 1 ? <button type="button" className="btn btn-info fs-4" onClick={onAdd}>Agregar al Carrito</button> : <button type="button" className="btn btn-danger fs-4"><b>SIN STOCK</b></button>}
             </div>
         </div>
     )
