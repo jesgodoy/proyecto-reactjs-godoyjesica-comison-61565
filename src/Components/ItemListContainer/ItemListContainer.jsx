@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading.jsx'
-import productsJSON from '../../json/products.json';
 import { useParams } from "react-router-dom";
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore/lite";
 
-const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(productsJSON);
-        }, 2000);
-    });
-};
+
 
 const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
@@ -18,14 +12,19 @@ const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams();
 
     useEffect(() => {
-        const fetchData = async () => {
-            const data = await getProducts();
-            setProducts(categoryId ? data.filter(product => product.category == categoryId) : data);
-            setLoading(false);
-        };
-
-        fetchData();
-    }, [categoryId]);
+        const db = getFirestore()
+        const productsCollection = collection(db, "products");
+        const resultQuery = categoryId ? query(productsCollection, where("category", "==", categoryId)) : productsCollection
+        getDocs(resultQuery).then(snapShot =>{
+            console.log(snapShot);
+            if(snapShot.size > 0){
+                setProducts(snapShot.docs.map(product => ({id:product.id, ...product.data()})))
+                setLoading(false)
+            }else{
+                setProducts([])
+            }
+        })
+    },[categoryId]);
 
     return (
         <div className=" container">

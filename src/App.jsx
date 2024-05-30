@@ -15,10 +15,10 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route  path="/" element={<ItemListContainer greeting={'Bienvenidos a Gamer Squad'} />}/>
-          <Route  path= "/category/:categoryId" element={<ItemListContainer/>}/>
-          <Route  path={"/product/:id"} element={<ItemDetailContainer />} />
-          <Route  path={"*"} element={<Error404/>}/>
+          <Route exact path="/" element={<ItemListContainer greeting={'Bienvenidos a Gamer Squad'} />}/>
+          <Route exact path= "/category/:categoryId" element={<ItemListContainer/>}/>
+          <Route exact path={"/product/:id"} element={<ItemDetailContainer />} />
+          <Route exact path={"*"} element={<Error404/>}/>
         </Routes>     
       </BrowserRouter>
     </div>
