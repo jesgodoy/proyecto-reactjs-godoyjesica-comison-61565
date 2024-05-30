@@ -12,7 +12,7 @@ const ItemDetail = ({product}) => {
                 <div className="col-lg-8">
                     <h1 className="text-center">{product.name}</h1>
                     <p className="text-center fs-2 my-4"><b>${product.price}</b></p>
-                    <p className="fs-5 my-4">{product.details}</p>
+                    <p className="fs-5 my-4">{product.description}</p>
                     <div className='text-center'>
                         <ItemCount stock={product.stock}/>
                     </div>
