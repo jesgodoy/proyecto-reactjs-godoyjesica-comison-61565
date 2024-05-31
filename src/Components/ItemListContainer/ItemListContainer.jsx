@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import ItemList from '../ItemList/ItemList';
-import Loading from '../Loading/Loading.jsx'
+import Loading from '../Loading/Loading.jsx';
 import { useParams } from "react-router-dom";
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore/lite";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore/lite";
 
 
 
@@ -25,6 +25,7 @@ const ItemListContainer = ({ greeting }) => {
             }
         })
     },[categoryId]);
+    
 
     return (
         <div className=" container">
