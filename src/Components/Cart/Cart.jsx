@@ -48,7 +48,7 @@ const Cart = () =>{
                             <tr>
                                 <td colSpan={4} className="align-middle text-center fs-3 py-5"><b>Total</b></td>
                                 <td className="align-middle text-center fs-3 py-5"><b>S {sumProducts()}</b></td>
-                                <td className="align-middle text-end"><button>checkout</button></td>
+                                <td className="align-middle text-end"><Link to={"/checkout"} className="btn bg-light">Checkout</Link></td>
                             </tr>
                         </tbody>
 

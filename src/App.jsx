@@ -9,6 +9,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import Error404 from './Components/Error404/Error404.jsx';
 import CartContextProvider from './Context/CartContext.jsx';
 import Cart from './Components/Cart/Cart.jsx';
+import Checkout from './Components/Checkout/Checkout.jsx';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route exact path= "/category/:categoryId" element={<ItemListContainer/>}/>
             <Route exact path={"/product/:id"} element={<ItemDetailContainer />} />
             <Route exact path={"/cart"} element={<Cart />} />
+            <Route exact path={"/checkout"} element={<Checkout />} />
             <Route exact path={"*"} element={<Error404/>}/>
           </Routes>     
         </BrowserRouter>
