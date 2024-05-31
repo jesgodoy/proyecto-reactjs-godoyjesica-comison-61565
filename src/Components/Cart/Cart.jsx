@@ -14,9 +14,6 @@ const Cart = () =>{
                     <div className="my-4 align-middle text-center">
                     <Link to={"/"} className="btn btn-info p-2 text-center fs-2">Volver a la Pagina Princupal</Link>
                     </div>
-                    
-
-
                 </div>
 
             </div>
@@ -26,15 +23,15 @@ const Cart = () =>{
 
 
     return(
+
         <div className="container my-5">
             <div className="row">
                 <div className="col">
                     <table className="table">
                         <tbody>
-
                             <tr>
                                 <td colSpan={6} className="align-middle text-center py-4 "><button className="btn btn-danger fs-4" onClick={clear}>Vaciar Carrito</button></td>
-                                
+                                    
                             </tr>
 
 
@@ -45,7 +42,7 @@ const Cart = () =>{
                                     <td className="align-middle text-center fs-4">$ {product.price}</td>
                                     <td className="align-middle text-center fs-4">x {product.quantity}</td>
                                     <td className="align-middle text-center fs-4">$ {product.quantity * product.price}</td>
-                                    <td className="align-middle text-center"><i class="bi bi-trash-fill" onClick={()=> {removeProduct(product.id)}}title="Eliminar Producto"></i></td>
+                                    <td className="align-middle text-center"><i className="bi bi-trash-fill" onClick={()=> {removeProduct(product.id)}}title="Eliminar Producto"></i></td>
                                 </tr> 
                             ))}
                             <tr>
@@ -53,14 +50,18 @@ const Cart = () =>{
                                 <td className="align-middle text-center fs-3 py-5"><b>S {sumProducts()}</b></td>
                                 <td className="align-middle text-end"><button>checkout</button></td>
                             </tr>
-
-                            
                         </tbody>
+
                     </table>
+
                 </div>
             </div>
         </div>
+        
+        
     )
 }
 
 export default Cart
+
+

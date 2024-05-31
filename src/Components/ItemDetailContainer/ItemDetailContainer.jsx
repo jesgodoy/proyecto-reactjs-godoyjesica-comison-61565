@@ -1,23 +1,9 @@
 import { useState, useEffect, } from 'react'
 import Loading from '../Loading/Loading.jsx'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
-import productsJSON from '../../json/products.json'
 import { useParams } from 'react-router-dom'
+import { doc, getDoc, getFirestore } from 'firebase/firestore/lite'
 
-/*const getProductById =(productId)=>{
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            resolve (productsJSON.find(prod =>prod.id === productId))
-        }, 500)
-    })
-}*/
-const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(productsJSON);
-        }, 2000);
-    });
-};
 
 const ItemDetailContainer =()=>{
     const [product, setProduct] = useState({})
@@ -25,12 +11,17 @@ const ItemDetailContainer =()=>{
     const {id} = useParams ()
 
     useEffect(() => {
-        const fetchData = async () =>{
-            const data = await getProducts();
-            setProduct (id ? data.find(product => product.id == id): {})
-            setLoading (false)
-        };
-        fetchData()
+        const db = getFirestore();
+        const documentRef = doc(db, "products", id);
+        getDoc(documentRef).then(snapShot =>{
+            if (snapShot.exists()) {
+                setProduct({id:snapShot.id, ...snapShot.data()});
+                setLoading(false);
+            } else {
+                console.log("No existe el Documento!");
+                setItem({});
+            }
+        })
         
     }, [id])
     
