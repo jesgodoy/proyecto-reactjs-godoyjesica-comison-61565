@@ -1,3 +1,4 @@
+import '../Checkout/checkout.css'
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
@@ -93,7 +94,7 @@ const Checkout = () => {
     }
 
     return (
-        <div className="container-fluid m-5 pe-5">
+        <div className="container-fluid m-2 ">
             <div className="row">
                 <div className="col mx-5">
                     <table className="table table-responsive">
@@ -130,9 +131,9 @@ const Checkout = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="col mx-5 pe-5">
+                <div className="col mx-5 ">
                     <form className="container">
-                        <div className="mb-3 me-5 pe-5">
+                        <div className="mb-3 width-form">
                             <label className="form-label fs-4">Nombre</label>
                             <input
                                 type="text"
@@ -145,7 +146,7 @@ const Checkout = () => {
                             />
                             {errors.name && <div className="invalid-feedback">{errors.name}</div>}
                         </div>
-                        <div className="mb-3 me-5 pe-5">
+                        <div className="mb-3 width-form">
                             <label className="form-label fs-4">Email</label>
                             <input
                                 type="text"
@@ -158,7 +159,7 @@ const Checkout = () => {
                             />
                             {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                         </div>
-                        <div className="mb-3 me-5 pe-5">
+                        <div className="mb-3 width-form">
                             <label className="form-label fs-4">Teléfono</label>
                             <input
                                 type="text"
@@ -171,7 +172,7 @@ const Checkout = () => {
                             />
                             {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                         </div>
-                        <div className="mb-3 me-5 pe-5">
+                        <div className="mb-3 width-form">
                             <label className="form-label fs-4">Dirección</label>
                             <input
                                 type="text"
