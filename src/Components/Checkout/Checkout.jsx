@@ -125,7 +125,7 @@ const Checkout = () => {
                                 </td>
                                 <td className="fs-6 py-5">
                                     {" "}
-                                    <b>S {sumProducts()}</b>
+                                    <b>$ {sumProducts()}</b>
                                 </td>
                             </tr>
                         </tbody>
