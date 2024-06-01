@@ -44,4 +44,4 @@ const CartContextProvider = ({children}) => {
     )
 }
 
-export default CartContextProvider;
+export default CartContextProvider
