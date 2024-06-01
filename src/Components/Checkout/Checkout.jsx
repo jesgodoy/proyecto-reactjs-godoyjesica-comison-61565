@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore/lite";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-    const { cart, sumProducts, removeProduct } = useContext(CartContext);
+    const { cart, clear, removeProduct, sumProducts, totalProducts } = useContext(CartContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -37,16 +38,58 @@ const Checkout = () => {
 
         if (validateForm()) {
             const buyer = { name: name, email: email, phone: phone, address: address };
-            const products = cart.map((product) => ({ id: product.id, title: product.name, price: product.price }));
-            const order = { buyer: buyer, products: products, total: sumProducts() };
+            const products = cart.map((product) => ({ id: product.id, quantity:product.quantity, title: product.name, price: product.price }));
+            const fecha = new Date();
+            const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+            const order = { buyer: buyer, products: products, date:date, total: sumProducts() };
             const db = getFirestore();
+
             const ordersCollection = collection(db, "orders");
 
             addDoc(ordersCollection, order).then((data) => {
                 setOrderId(data.id);
+                setName("");
+                setEmail("");
+                setPhone("");
+                setAddress("")
+                clear();
+
             });
         }
     };
+    
+   if(orderId){
+        return(
+            <div className="container my-5">
+                <div className="row my-4 align-middle text-center">
+                    <div className="alert alert-light" role="alert">
+                        <h2> Tu Compra se proceso con exito. Tu Orden de Compra es: {orderId}</h2>
+                    </div>
+                </div>    
+                <div className="row my-4 align-middle text-center">
+                   <button className="btn btn-info"><Link to={"/"} className=" p-3 text-center fs-2">Volver a la Pagina Princupal</Link></button> 
+                </div>    
+            </div>
+            
+            
+
+        )
+    }
+
+    
+    if(totalProducts() == 0){
+        return(
+            <div className="container my-5">
+                <div className="col">
+                    <h1 className="text-center"> No existen productos en el Carrito</h1>
+                    <div className="my-4 align-middle text-center">
+                    <Link to={"/"} className="btn btn-info p-3 text-center fs-2">Volver a la Pagina Princupal</Link>
+                    </div>
+                </div>
+
+            </div>
+        )
+    }
 
     return (
         <div className="container-fluid m-5 pe-5">
@@ -140,23 +183,16 @@ const Checkout = () => {
                             />
                             {errors.address && <div className="invalid-feedback">{errors.address}</div>}
                         </div>
-                        <button type="button" className="btn bg-light fs-4" onClick={generateOrder}>
-                            Generar Orden
-                        </button>
+                        <div className="text-center ">
+                            <button type="button" className="btn btn-info fs-4" onClick={generateOrder}>
+                                Generar Orden
+                            </button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
-            <div className="row">
-                <div className="col my-4">
-                    {orderId ? (
-                        <div className="alert text-center fs-3" role="alert">
-                            Tu Compra se proceso con exito. Tu Orden de Compra es: <h4>{orderId}</h4>
-                        </div>
-                    ) : (
-                        ""
-                    )}
-                </div>
-            </div>
+            
         </div>
     );
 };
