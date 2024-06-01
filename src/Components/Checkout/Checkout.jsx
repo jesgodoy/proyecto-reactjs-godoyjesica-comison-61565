@@ -83,7 +83,8 @@ const Checkout = () => {
                 <div className="col">
                     <h1 className="text-center"> No existen productos en el Carrito</h1>
                     <div className="my-4 align-middle text-center">
-                    <Link to={"/"} className="btn btn-info p-3 text-center fs-2">Volver a la Pagina Princupal</Link>
+                        <button className="btn btn-info "><Link to={"/"} className="p-3 text-center fs-2">Volver a la Pagina Princupal</Link></button>
+                    
                     </div>
                 </div>
 

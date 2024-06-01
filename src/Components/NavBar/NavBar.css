@@ -42,6 +42,9 @@ header {
   .animated-border:hover::after {
     width: 100%;
   }
-  
+  header  .icono-menu{
+    background-color: rgb(79, 245, 245);
+
+}
   
   
