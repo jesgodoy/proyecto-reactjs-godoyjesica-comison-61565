@@ -58,7 +58,7 @@ const Checkout = () => {
         }
     };
     
-   if(orderId){
+    if(orderId){
         return(
             <div className="container my-5">
                 <div className="row my-4 align-middle text-center">
@@ -67,7 +67,7 @@ const Checkout = () => {
                     </div>
                 </div>    
                 <div className="row my-4 align-middle text-center">
-                   <button className="btn btn-info"><Link to={"/"} className=" p-3 text-center fs-2">Volver a la Pagina Princupal</Link></button> 
+                    <button className="btn btn-info"><Link to={"/"} className=" btn p-1 text-center fs-2">Volver a la Pagina Princupal</Link></button> 
                 </div>    
             </div>
             
@@ -83,7 +83,7 @@ const Checkout = () => {
                 <div className="col">
                     <h1 className="text-center"> No existen productos en el Carrito</h1>
                     <div className="my-4 align-middle text-center">
-                        <button className="btn btn-info "><Link to={"/"} className="p-3 text-center fs-2">Volver a la Pagina Princupal</Link></button>
+                        <button className="btn btn-info "><Link to={"/"} className="btn p-1 text-center fs-2">Volver a la Pagina Princupal</Link></button>
                     
                     </div>
                 </div>
@@ -96,13 +96,13 @@ const Checkout = () => {
         <div className="container-fluid m-5 pe-5">
             <div className="row">
                 <div className="col mx-5">
-                    <table className="table">
+                    <table className="table table-responsive">
                         <tbody>
                             {cart.map((product) => (
                                 <tr key={product.id}>
                                     <td className="align-middle text-center">{product.name}</td>
                                     <td>
-                                        <img src={product.img} alt={product.name} width={100} />
+                                        <img src={product.img} alt={product.name} className="img-fluid" style={{ maxWidth: "100px" }} />
                                     </td>
                                     <td className="align-middle text-center">$ {product.price}</td>
                                     <td className="align-middle text-center">x {product.quantity}</td>

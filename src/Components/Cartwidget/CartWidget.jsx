@@ -9,7 +9,6 @@ const CartWidget  = () =>{
 
     const {totalProducts} =useContext(CartContext)
 
-  
     return (
     
     <Link to={"/cart"}>
@@ -17,7 +16,7 @@ const CartWidget  = () =>{
             <button type="button" className="btn btn-cart position-relative">
                 <i className="bi bi-cart4"></i>
                 {totalProducts() >0 &&(
-                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-number">{totalProducts()}</span>
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-number">{totalProducts()}</span>
                 )}
             </button>
             </div>
